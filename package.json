@@ -1,23 +1,25 @@
 {
   "name": "@ajayff4/le-data",
   "version": "1.0.0",
-  "main": "src/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "repository": "https://github.com/Ajayff4/-ajayff4-le-data.git",
   "author": "ajayff4 <ajayff4@gmail.com>",
   "license": "MIT",
   "private": false,
   "devDependencies": {
     "@types/node": "^18.11.9",
+    "tsup": "^6.5.0",
     "typescript": "^4.9.3"
   },
   "keywords": [
     "le-data",
-    "placeholder",
+    "placeholder-data",
     "fake-data-generator"
   ],
   "scripts": {
-    "start": "ts-node index.ts",
-    "build": "rm -rf dist/* && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && ./fixup.sh",
-    "clean": "rm -rf dist/* node_modules yarn.lock"
+    "start": "ts-node src/index.ts",
+    "clean": "rm -rf dist/* node_modules yarn.lock",
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean"
   }
 }
