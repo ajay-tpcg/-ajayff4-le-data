@@ -1,6 +1,6 @@
 {
   "name": "@ajayff4/le-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "repository": "https://github.com/Ajayff4/-ajayff4-le-data.git",
