@@ -33,25 +33,24 @@ const ldt = require("@ajayff4/le-data").default;
 
 
 console.log("int:", ldt.number.int()); // int: -1161972571
-console.log("int with max:", ldt.number.int({max:100})); // int with max: -2095377662
-console.log("int with min and max:", ldt.number.int({min:0, max:100})); // int with min and max: 35
+console.log("int:", ldt.number.int({max:100})); // int : -2095377662
+console.log("int:", ldt.number.int({min:0, max:100})); // int : 35
 
 console.log("seed:", ldt.utils.seed()); // seed: orz3lKJg6m
-console.log("seed with length:", ldt.utils.seed(21)); // seed with length: 2yGIVAtxWJPGualh62kK5
+console.log("seed:", ldt.utils.seed(21)); // seed: 2yGIVAtxWJPGualh62kK5
 console.log("slug:", ldt.utils.slug('I am @ajayff4/le-data')); // slug: i-am-ajayff4ledata
 
 console.log("age:", ldt.person.age()); // age: 57
-console.log("age with min:", ldt.person.age({min:18})); // age with min: 57
-console.log("age with min and max:", ldt.person.age({min:18, max:60})); // age with min and max: 33
+console.log("age:", ldt.person.age({min:18})); // age: 57
+console.log("age:", ldt.person.age({min:18, max:60})); // age: 33
 console.log("firstname:", ldt.person.firstName()); // firstname: Laxmi
-console.log("firstname with sex:", ldt.person.firstName({sex:'female'})); // firstname with sex: Laxmi
-console.log("firstname with sex:", ldt.person.firstName({sex:'female'}));
+console.log("firstname:", ldt.person.firstName({sex:'female'})); // firstname: Sarika
 console.log("middlename:", ldt.person.middleName()); // middlename: Kumar
 console.log("lastname:", ldt.person.lastName()); // lastname: Ahluwalia
 console.log("fullname:", ldt.person.fullName()); // fullname: Sahadev Agarwal
-console.log("fullname with middlename:", ldt.person.fullName({middle:true})); // fullname with middlename: Sherry Kumar Ahuja
+console.log("fullname:", ldt.person.fullName({middle:true})); // fullname: Sherry Kumar Ahuja
 console.log("gender:", ldt.person.gender()); // gender: female
-console.log("gender without binary:", ldt.person.gender({binary:false})); // gender without binary: xenogender
+console.log("gender:", ldt.person.gender({binary:false})); // gender: xenogender
 ```
 
 ## 💎 Modules

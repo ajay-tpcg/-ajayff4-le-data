@@ -3,8 +3,13 @@
 See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
-## v1.0.1
+## v1.0.2
+### Build
+  - Build size is reduced.
+### Fix
+  - Updated README.md
 
+## v1.0.1
 ### API
   - Added person module and utils module for data generation
 ### Fix
