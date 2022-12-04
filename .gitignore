@@ -1,3 +1,8 @@
-node_modules
+# build
 dist
+
+#modules
+node_modules
+
+#others
 temp.txt

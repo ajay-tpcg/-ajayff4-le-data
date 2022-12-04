@@ -1,7 +1,24 @@
-function test() {
-  console.table({a:'1', b:'2'})
-}
+import CardFactory from './factory/factory.card';
+import ColorFactory from './factory/factory.color';
+import IdFactory from './factory/factory.id';
+import LocationFactory from './factory/factory.location';
+import NumberFactory from './factory/factory.number';
+import PersonFactory from './factory/factory.person';
+import ProductFactory from './factory/factory.product';
+import StringFactory from './factory/factory.string';
+import UtilsFactory from './factory/factory.utils';
 
-export {
-  test
-}
+const ldt = {
+  card: new CardFactory(),
+  color: new ColorFactory(),
+  id: new IdFactory(),
+  location: new LocationFactory(),
+  number: new NumberFactory(),
+  person: new PersonFactory(),
+  product: new ProductFactory(),
+  string: new StringFactory(),
+  utils: new UtilsFactory(),
+};
+
+export { ldt }
+export default ldt;

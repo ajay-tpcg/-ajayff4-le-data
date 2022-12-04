@@ -13,13 +13,14 @@
     "typescript": "^4.9.3"
   },
   "keywords": [
+    "ajayff4",
     "le-data",
     "placeholder-data",
     "fake-data-generator"
   ],
   "scripts": {
     "start": "ts-node src/index.ts",
-    "clean": "rm -rf dist/* node_modules yarn.lock",
+    "clean": "rm -rf dist node_modules yarn.lock",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean"
   }
 }
