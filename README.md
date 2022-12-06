@@ -5,8 +5,8 @@
 
   <img alt="Downloads" src="https://img.shields.io/npm/dw/@ajayff4/le-data" />
   <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/ajayff4/-ajayff4-le-data" />
+  <img alt="Health Score" src="https://snyk.io/advisor/npm-package/@ajayff4/le-data/badge.svg" />
   <img alt="Activity" src="https://img.shields.io/github/commit-activity/w/ajayff4/-ajayff4-le-data" />
-  <img alt="Repo Size" src="https://img.shields.io/github/repo-size/ajayff4/-ajayff4-le-data" />
   <img alt="Github License" src="https://img.shields.io/github/license/ajayff4/-ajayff4-le-data" />
 </div>
 

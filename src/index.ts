@@ -7,6 +7,8 @@ import PersonFactory from './factory/factory.person';
 import ProductFactory from './factory/factory.product';
 import StringFactory from './factory/factory.string';
 import UtilsFactory from './factory/factory.utils';
+import { IntOptions } from './types/number';
+import { AgeOptions, FullNameOptions, GenderOptions, NameOptions } from './types/person';
 
 const ldt = {
   card: new CardFactory(),
@@ -20,5 +22,8 @@ const ldt = {
   utils: new UtilsFactory(),
 };
 
-export { ldt }
+export { ldt };
 export default ldt;
+export type {
+  AgeOptions, FullNameOptions, GenderOptions, IntOptions,  NameOptions,
+};

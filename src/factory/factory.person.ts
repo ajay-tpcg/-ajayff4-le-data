@@ -13,28 +13,44 @@ class PersonFactory {
   firstName(options?:NameOptions) {
     let _first_name = "";
     if (options?.sex===SEX.MALE) {
-      _first_name = utils.getRandomValue(person.males);
+      _first_name = utils.getRandomValue(person.maleFirstNames);
     } else if (options?.sex===SEX.FEMALE) {
-      _first_name = utils.getRandomValue(person.females);
+      _first_name = utils.getRandomValue(person.femaleFirstNames);
     } else {
-      _first_name = utils.getRandomValue([...person.males, ...person.females]);
+      _first_name = utils.getRandomValue([...person.maleFirstNames, ...person.femaleFirstNames]);
     }
     return _first_name;
   }
 
   middleName(options?:NameOptions) {
-    return utils.getRandomValue(person.middleNames);
+    let _middle_name = "";
+    if (options?.sex===SEX.MALE) {
+      _middle_name = utils.getRandomValue(person.maleMiddleNames);
+    } else if (options?.sex===SEX.FEMALE) {
+      _middle_name = utils.getRandomValue(person.femaleMiddleNames);
+    } else {
+      _middle_name = utils.getRandomValue([...person.maleMiddleNames, ...person.femaleMiddleNames]);
+    }
+    return _middle_name;
   }
 
   lastName(options?:NameOptions) {
-    return utils.getRandomValue(person.lastNames);
+    let _last_name = "";
+    if (options?.sex===SEX.MALE) {
+      _last_name = utils.getRandomValue([...person.maleLastNames, ...person.commonLastNames ]);
+    } else if (options?.sex===SEX.FEMALE) {
+      _last_name = utils.getRandomValue([...person.femaleLastNames, ...person.commonLastNames]);
+    } else {
+      _last_name = utils.getRandomValue([...person.maleLastNames, ...person.femaleLastNames, ...person.commonLastNames]);
+    }
+    return _last_name;
   }
 
   fullName(options?:FullNameOptions) {
     if (options?.middle) {
-      return this.firstName() + " " + this.middleName() + " " + this.lastName();
+      return this.firstName({sex:options?.sex}) + " " + this.middleName({sex:options?.sex}) + " " + this.lastName({sex:options?.sex});
     } else {
-      return this.firstName() + " " + this.lastName();
+      return this.firstName({sex:options?.sex}) + " " + this.lastName({sex:options?.sex});
     }
   }
 

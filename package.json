@@ -18,6 +18,9 @@
     "placeholder-data",
     "fake-data-generator"
   ],
+  "engines" : { 
+    "node" : ">=14.19.0 <=18.12.1"
+  },
   "scripts": {
     "start": "ts-node src/index.ts",
     "clean": "rm -rf dist node_modules yarn.lock",

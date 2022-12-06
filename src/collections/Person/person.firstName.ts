@@ -1,2 +1,2 @@
 export const males = ["Ajay", "Akash", "Bhavesh", "Chirag", "Deepchand", "Laxmikant", "Sahadev"];
-export const females = ["Megha", "Sarika", "Hulsee", "Sherry", "Neha", "Reshu", "Laxmi", "Anjali"];
+export const females = ["Harshita", "Megha", "Sarika", "Hulsee", "Sherry", "Neha", "Reshu", "Laxmi", "Anjali"];

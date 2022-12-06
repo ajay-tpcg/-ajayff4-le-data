@@ -3,6 +3,15 @@
 See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
+## v1.0.3
+### Build
+  - Exposed types
+### Fix
+  - Added 'sex' option on person.fullName() and fixed others 'sex' flags
+  - Rearranged person collections
+  - Updated README.md
+  - Added CODE_OF_CONDUCT.md
+
 ## v1.0.2
 ### Build
   - Build size is reduced.
