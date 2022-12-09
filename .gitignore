@@ -4,6 +4,9 @@ dist
 #modules
 node_modules
 
+#tests
+test
+
 #others
 temp.txt
 todos.txt

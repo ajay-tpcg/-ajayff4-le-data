@@ -3,6 +3,13 @@ const getRandomValue = (entities: any[]) => {
   return entities[randomIndex];
 }
 
+const throwErrors = ((issues: any[]) => {
+  issues.forEach(issue => {
+    throw new Error(issue.message);
+  });
+})
+
 export default {
   getRandomValue,
+  throwErrors,
 };

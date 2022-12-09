@@ -3,6 +3,13 @@
 See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
+## v1.0.4
+### Build
+  - added zod for validation and error handling
+  - added jest for unit testing
+### DOCS
+  - README.md have new badge for version
+
 ## v1.0.3
 ### Build
   - Exposed types

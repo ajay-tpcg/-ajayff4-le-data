@@ -8,6 +8,8 @@
   <img alt="Health Score" src="https://snyk.io/advisor/npm-package/@ajayff4/le-data/badge.svg" />
   <img alt="Activity" src="https://img.shields.io/github/commit-activity/w/ajayff4/-ajayff4-le-data" />
   <img alt="Github License" src="https://img.shields.io/github/license/ajayff4/-ajayff4-le-data" />
+  
+  [![@ajayff4/le-data Versions](https://badges.openbase.com/js/versions/@ajayff4/le-data.svg?token=6ZsB1PXI74de3lWHOo1V/BKAnawwBhBbxXk2l4GrnLE=)](https://openbase.com/js/@ajayff4/le-data?utm_source=embedded&amp;utm_medium=badge&amp;utm_campaign=rate-badge)]
 </div>
 
 ## 🚀 Features
