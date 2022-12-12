@@ -1,68 +1,137 @@
-import { SEX } from '../constants';
 import utils from '../utils';
 import { person } from '../collections';
 import { AgeOptions, FullNameOptions, GenderOptions, NameOptions } from '../types/person';
-import Ledata from '..';
+import NumberFactory from './factory.number';
+import { ERRORS, SEX } from '../constants';
+import { z } from 'zod';
 
 class PersonFactory {
 
   age(options?:AgeOptions) {
-    return Ledata.number.int({min:options?.min ?? 0, max:options?.max ?? 100});
+    const numberFactory = new NumberFactory();
+    const _min = options?.min ?? 0;
+    const _max = options?.max ?? 100;
+    
+    const schema = z.object({
+      min: z.number({invalid_type_error:ERRORS.TYPE_ERROR})
+      .min(_min, {message:ERRORS.RANGE_ERROR}).optional(),
+      max: z.number({invalid_type_error:ERRORS.TYPE_ERROR})
+      .max(_max, {message:ERRORS.RANGE_ERROR}).optional(),
+    })
+    .refine(() => {
+      if (_max < _min) return false;
+      else return true;
+    }, ERRORS.RANGE_ERROR)
+    .optional();
+
+    const res = schema.safeParse(options);
+    if (res.success) {
+      return numberFactory.int({min:options?.min ?? _min, max:options?.max ?? _max});
+    } else {
+      utils.throwErrors(res.error.issues);
+    }
   }
 
   firstName(options?:NameOptions) {
     let _first_name = "";
-    if (options?.sex===SEX.MALE) {
-      _first_name = utils.getRandomValue(person.maleFirstNames);
-    } else if (options?.sex===SEX.FEMALE) {
-      _first_name = utils.getRandomValue(person.femaleFirstNames);
+    const schema = z.object({
+      sex: z.nativeEnum(SEX).optional(),
+    }).optional();
+    const res = schema.safeParse(options);
+
+    if(res.success) {
+      if (options?.sex===SEX.MALE) {
+        _first_name = utils.getRandomValue(person.maleFirstNames);
+      } else if (options?.sex===SEX.FEMALE) {
+        _first_name = utils.getRandomValue(person.femaleFirstNames);
+      } else {
+        _first_name = utils.getRandomValue([...person.maleFirstNames, ...person.femaleFirstNames]);
+      }
+      return _first_name;
     } else {
-      _first_name = utils.getRandomValue([...person.maleFirstNames, ...person.femaleFirstNames]);
+      utils.throwErrors(res.error.issues);
     }
-    return _first_name;
   }
 
   middleName(options?:NameOptions) {
     let _middle_name = "";
-    if (options?.sex===SEX.MALE) {
-      _middle_name = utils.getRandomValue(person.maleMiddleNames);
-    } else if (options?.sex===SEX.FEMALE) {
-      _middle_name = utils.getRandomValue(person.femaleMiddleNames);
+    const schema = z.object({
+      sex: z.nativeEnum(SEX).optional(),
+    }).optional();
+    const res = schema.safeParse(options);
+
+    if(res.success) {
+      if (options?.sex===SEX.MALE) {
+        _middle_name = utils.getRandomValue(person.maleMiddleNames);
+      } else if (options?.sex===SEX.FEMALE) {
+        _middle_name = utils.getRandomValue(person.femaleMiddleNames);
+      } else {
+        _middle_name = utils.getRandomValue([...person.maleMiddleNames, ...person.femaleMiddleNames]);
+      }
+      return _middle_name;
     } else {
-      _middle_name = utils.getRandomValue([...person.maleMiddleNames, ...person.femaleMiddleNames]);
+      utils.throwErrors(res.error.issues);
     }
-    return _middle_name;
   }
 
   lastName(options?:NameOptions) {
     let _last_name = "";
-    if (options?.sex===SEX.MALE) {
-      _last_name = utils.getRandomValue([...person.maleLastNames, ...person.commonLastNames ]);
-    } else if (options?.sex===SEX.FEMALE) {
-      _last_name = utils.getRandomValue([...person.femaleLastNames, ...person.commonLastNames]);
+    const schema = z.object({
+      sex: z.nativeEnum(SEX).optional(),
+    }).optional();
+    const res = schema.safeParse(options);
+
+    if(res.success) {
+      if (options?.sex===SEX.MALE) {
+        _last_name = utils.getRandomValue([...person.maleLastNames, ...person.commonLastNames ]);
+      } else if (options?.sex===SEX.FEMALE) {
+        _last_name = utils.getRandomValue([...person.femaleLastNames, ...person.commonLastNames]);
+      } else {
+        _last_name = utils.getRandomValue([...person.maleLastNames, ...person.femaleLastNames, ...person.commonLastNames]);
+      }
+      return _last_name;
     } else {
-      _last_name = utils.getRandomValue([...person.maleLastNames, ...person.femaleLastNames, ...person.commonLastNames]);
+      utils.throwErrors(res.error.issues);
     }
-    return _last_name;
   }
 
   fullName(options?:FullNameOptions) {
-    if (options?.middle) {
-      return this.firstName({sex:options?.sex}) + " " + this.middleName({sex:options?.sex}) + " " + this.lastName({sex:options?.sex});
+    const schema = z.object({
+      sex: z.nativeEnum(SEX).optional(),
+      middle: z.boolean({invalid_type_error:ERRORS.TYPE_ERROR}).optional(), 
+    }).optional();
+    const res = schema.safeParse(options);
+
+    if(res.success) {
+      if (options?.middle) {
+        return this.firstName({sex:options?.sex}) + " " + this.middleName({sex:options?.sex}) + " " + this.lastName({sex:options?.sex});
+      } else {
+        return this.firstName({sex:options?.sex}) + " " + this.lastName({sex:options?.sex});
+      }
     } else {
-      return this.firstName({sex:options?.sex}) + " " + this.lastName({sex:options?.sex});
+      utils.throwErrors(res.error.issues);
     }
   }
 
   gender(options?:GenderOptions) {
     const _binary = options?.binary ?? true;
     let _gender = '';
-    if(_binary) {
-      _gender = utils.getRandomValue(Object.values(SEX));
+
+    const schema = z.object({
+      binary: z.boolean({invalid_type_error:ERRORS.TYPE_ERROR}).optional(),
+    }).optional();
+    const res = schema.safeParse(options);
+
+    if(res.success) {
+      if(_binary) {
+        _gender = utils.getRandomValue(Object.values(SEX));
+      } else {
+        _gender = utils.getRandomValue(person.genders);
+      }
+      return _gender;
     } else {
-      _gender = utils.getRandomValue(person.gender);
+      utils.throwErrors(res.error.issues);
     }
-    return _gender;
   }
 
 }

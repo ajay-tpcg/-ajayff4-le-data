@@ -1,15 +1,16 @@
-import { SEX } from "../constants";
 import { IntOptions } from "./number";
 
+export type SexType = "male" | "female";
+
 export type NameOptions = {
-  sex?: SEX;
+  sex?: SexType;
 }
 
 export type AgeOptions = Pick<IntOptions,'max'|'min'>;
 
 export type FullNameOptions = {
   middle?: boolean;
-  sex?: SEX;
+  sex?: SexType;
 }
 
 export type GenderOptions = {

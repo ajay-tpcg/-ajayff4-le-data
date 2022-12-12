@@ -3,18 +3,25 @@
 See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
+## v1.0.5
+### Docs
+  - added **Credits Section** and **Logo** in README
+  - added validations & unit tests for person module
+### Fix
+  - patched **sex** option in person module for typescript users, now it will simply give options of either **male**, **female** or undefined (in case of if we don't want to pass the sex option)
+
 ## v1.0.4
 ### Build
   - added zod for validation and error handling
   - added jest for unit testing
-### DOCS
+### Docs
   - README.md have new badge for version
 
 ## v1.0.3
 ### Build
   - Exposed types
 ### Fix
-  - Added 'sex' option on person.fullName() and fixed others 'sex' flags
+  - Added **sex** option on person.fullName() and fixed others **sex** flags
   - Rearranged person collections
   - Updated README.md
   - Added CODE_OF_CONDUCT.md
