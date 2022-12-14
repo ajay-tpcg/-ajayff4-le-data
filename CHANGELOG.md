@@ -3,6 +3,10 @@
 See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
+## v1.0.5-patch1
+### Build
+  - patched broken build
+
 ## v1.0.5
 ### Docs
   - added **Credits Section** and **Logo** in README
