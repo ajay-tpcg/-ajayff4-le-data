@@ -3,6 +3,19 @@
 See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
+## v1.0.6
+### Playground
+  - added Stackblitz to have some fun experiments 🧪
+### Docs
+  - Stackblitz link has been added to README
+### New
+  - added customArray(), otp() methods in utils module
+  - added options for seed() method in utils module
+
+## v1.0.5-patch2
+### Build
+  - patched broken build again
+
 ## v1.0.5-patch1
 ### Build
   - patched broken build

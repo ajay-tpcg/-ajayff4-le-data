@@ -23,7 +23,7 @@ class NumberFactory {
 
     const res = schema.safeParse(options);
     if (res.success) {
-      return Math.floor(Math.random() * (_max - _min + 1) + _min);
+      return utils.getNumberBetween(_min, _max);
     } else {
       utils.throwErrors(res.error.issues);
     }

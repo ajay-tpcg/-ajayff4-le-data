@@ -1,14 +1,12 @@
 import utils from '../utils';
 import { person } from '../collections';
 import { AgeOptions, FullNameOptions, GenderOptions, NameOptions } from '../types/person';
-import NumberFactory from './factory.number';
 import { ERRORS, SEX } from '../constants';
 import { z } from 'zod';
 
 class PersonFactory {
 
   age(options?:AgeOptions) {
-    const numberFactory = new NumberFactory();
     const _min = options?.min ?? 0;
     const _max = options?.max ?? 100;
     
@@ -26,7 +24,7 @@ class PersonFactory {
 
     const res = schema.safeParse(options);
     if (res.success) {
-      return numberFactory.int({min:options?.min ?? _min, max:options?.max ?? _max});
+      return utils.getNumberBetween(_min, _max);
     } else {
       utils.throwErrors(res.error.issues);
     }

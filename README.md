@@ -10,6 +10,11 @@
   <img alt="Github License" src="https://img.shields.io/github/license/ajayff4/-ajayff4-le-data" />
 </div>
 
+## ⚡️ Try it Online
+
+[![](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/react-ts-yffcvk?file=App.tsx
+)
+
 ## 🚀 Features
 
 - 🧍 - Generate random person with an Indian identity.
@@ -31,7 +36,7 @@ yarn add -D @ajayff4/le-data
 ```ts
 import { ldt } from "@ajayff4/le-data";
 // or
-const ldt = require("@ajayff4/le-data").default;
+const { ldt } = require("@ajayff4/le-data");
 
 
 console.log("int:", ldt.number.int()); // int: -1161972571
@@ -69,12 +74,11 @@ The API covers the following modules:
 | Person   | `ldt.person.fullName()`   | Ajay Agrawal                                     |
 | Product  | `ldt.product.info()`      | Product module will be available soon!           |
 | String   | `ldt.string.info()`       | String module will be available soon!            |
+| Game     | `ldt.game.info()`         | Game module will be available soon!              |
 | Utils    | `ldt.utils.seed(21)`      | xayaW9LU0ncPdW1JJtuOn                            |
                                                     
 ## 🛤️ Roadmap - Plans ahead
-  - demo setup will be added
   - JSDocs will be added
-  - unit tests will be added
   - documentation page will be released
   - introduced factories need to be completed
 
