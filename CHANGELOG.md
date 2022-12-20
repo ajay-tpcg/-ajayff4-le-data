@@ -3,6 +3,13 @@
 See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
+## v1.0.7
+### Docs
+  - README got new badges for CI pipeline build & live code coverage
+### Build
+  - Github action has been added for build
+  - Integrated Codecov app to Github to get code coverage
+
 ## v1.0.6
 ### Playground
   - added Stackblitz to have some fun experiments 🧪

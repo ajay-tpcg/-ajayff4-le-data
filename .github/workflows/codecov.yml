@@ -1,0 +1,40 @@
+name: Code Coverage
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  unit-test:
+    runs-on: [ubuntu-latest]
+    name: 'Build & Unit Test: node 16'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Node.js version to 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      
+      - name: Install deps
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+        
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build
+          
+      - name: Test the app
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test
+
+      - name: Download and run Codecov uploader
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov    
