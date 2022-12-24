@@ -1,3 +1,4 @@
+// will be used in future for i18n and maybe with some modules
 export enum Countries {
   IN = "IN",
   US = "US",
@@ -19,3 +20,12 @@ export const SEED = {
   LOWER: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'],
   NUMBER: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'],
 }
+
+export const COIN = ["heads", "tails"];
+export const DICE = [1,2,3,4,5,6];
+
+export const CARDS = {
+  NAMES: ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"],
+  TYPES: ["Clubs","Hearts","Diamonds","Spades"],
+  SYMBOLS: ["♠️","♦️","♥️","♣️"],
+};

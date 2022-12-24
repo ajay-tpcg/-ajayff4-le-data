@@ -6,5 +6,6 @@ module.exports = {
   coverageDirectory: "./test/coverage",
   collectCoverageFrom: [
     "./src/factory/*"
-  ]
+  ],
+  testPathIgnorePatterns: ["temp"]
 };

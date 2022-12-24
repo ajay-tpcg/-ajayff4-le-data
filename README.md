@@ -4,7 +4,7 @@
   <p>Generates placeholder data for testing and development. Made with indian touch in it.</p>
 
   <img alt="Downloads" src="https://img.shields.io/npm/dw/@ajayff4/le-data" />
-  <img alt="Build" src="https://img.shields.io/github/actions/workflow/status/ajayff4/-ajayff4-le-data/codecov.yml?branch=main&logo=github" />
+  <img alt="Build" src="https://github.com/ajayff4/-ajayff4-le-data/actions/workflows/ci.yml/badge.svg?event=push" />
   <a href="https://codecov.io/gh/Ajayff4/-ajayff4-le-data" > 
   <img src="https://codecov.io/gh/Ajayff4/-ajayff4-le-data/branch/LDT-codecov/graph/badge.svg?token=90NTVO5Y3W"/>
   <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/ajayff4/-ajayff4-le-data" />

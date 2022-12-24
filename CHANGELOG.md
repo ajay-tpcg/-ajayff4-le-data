@@ -4,11 +4,16 @@ See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
 ## v1.0.7
+### New
+  - Added 🎲 game module ♣️ for dice roll, toss & cards
+  - Playground updated with game module as well
 ### Docs
   - README got new badges for CI pipeline build & live code coverage
+  - Playground example is updated
 ### Build
   - Github action has been added for build
   - Integrated Codecov app to Github to get code coverage
+  - Added tsconfig.json & CHANGELOG.md to production build
 
 ## v1.0.6
 ### Playground
