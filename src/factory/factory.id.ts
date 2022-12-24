@@ -1,7 +1,14 @@
-//returns random ids in format of nanoid, uuid, OTP
+import crypto from 'crypto';
+import UtilsFactory from './factory.utils';
+
 class IdFactory {
-  info() {
-    console.log("Id module will be available soon!");
+  uuid() {
+    return crypto.randomUUID();
+  }
+
+  nanoid() {
+    const utilsFactory = new UtilsFactory();
+    return utilsFactory.seed(21,{addons:'_-'});
   }
 }
 

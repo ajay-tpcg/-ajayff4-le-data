@@ -1,16 +1,15 @@
 <div align="center">
+  <p>Generates placeholder data for testing and development. Made with indian touch in it.</p>
   <img src="https://github.com/Ajayff4/-ajayff4-le-data/blob/main/logo.png" width="200" alt="Logo"/>
   <h1>Le-data</h1>
-  <p>Generates placeholder data for testing and development. Made with indian touch in it.</p>
-
   <img alt="Downloads" src="https://img.shields.io/npm/dw/@ajayff4/le-data" />
   <img alt="Build" src="https://github.com/ajayff4/-ajayff4-le-data/actions/workflows/ci.yml/badge.svg?event=push" />
   <a href="https://codecov.io/gh/Ajayff4/-ajayff4-le-data" > 
-  <img src="https://codecov.io/gh/Ajayff4/-ajayff4-le-data/branch/LDT-codecov/graph/badge.svg?token=90NTVO5Y3W"/>
-  <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/ajayff4/-ajayff4-le-data" />
+  <img src="https://codecov.io/gh/Ajayff4/-ajayff4-le-data/branch/main/graph/badge.svg?token=90NTVO5Y3W"/>
+  <!-- <img alt="Code Size" src="https://img.shields.io/github/languages/code-size/ajayff4/-ajayff4-le-data" /> -->
   <img alt="Health Score" src="https://snyk.io/advisor/npm-package/@ajayff4/le-data/badge.svg" />
-  <img alt="Activity" src="https://img.shields.io/github/commit-activity/w/ajayff4/-ajayff4-le-data" />
-  <img alt="License" src="https://img.shields.io/github/license/ajayff4/-ajayff4-le-data" />
+  <img alt="Activity" src="https://img.shields.io/github/commit-activity/w/ajayff4/-ajayff4-le-data?color=hotpink" />
+  <img alt="License" src="https://img.shields.io/github/license/ajayff4/-ajayff4-le-data?color=springgreen" />
 </div>
 
 ## ⚡️ Try it Online
@@ -67,18 +66,18 @@ console.log("gender:", ldt.person.gender({binary:false})); // gender: xenogender
 
 The API covers the following modules:
 
-| Module   | Example                   | Output                                           |
-| -------- | --------------------------|--------------------------------------------------|
-| Card     | `ldt.card.info()`         | Card module will be available soon!              |
-| Color    | `ldt.color.info()`        | Color module will be available soon!             |
-| Id       | `ldt.id.info()`           | Id module will be available soon!                |
-| Location | `ldt.location.info()`     | Location module will be available soon!          |
-| Number   | `ldt.number.int()`        | 56                                               |
-| Person   | `ldt.person.fullName()`   | Ajay Agrawal                                     |
-| Product  | `ldt.product.info()`      | Product module will be available soon!           |
-| String   | `ldt.string.info()`       | String module will be available soon!            |
-| Game     | `ldt.game.info()`         | Game module will be available soon!              |
-| Utils    | `ldt.utils.seed(21)`      | xayaW9LU0ncPdW1JJtuOn                            |
+| Module      | Example                   | Output                                           |
+| ------------| --------------------------|--------------------------------------------------|
+| 💳Card     | `ldt.card.info()`         | Card module will be available soon!              |
+| 🌈Color    | `ldt.color.rgb()`         | #31ef60                                          |
+| 🆔Id       | `ldt.id.uuid()`           | d328ab9f-a826-4519-ad6b-c1699d58f1cc             |
+| 🌎Location | `ldt.location.info()`     | Location module will be available soon!          |
+| 🔢Number   | `ldt.number.int()`        | 56                                               |
+| 🧑Person   | `ldt.person.fullName()`   | Ajay Agrawal                                     |
+| 👠Product  | `ldt.product.info()`      | Product module will be available soon!           |
+| 🔠String   | `ldt.string.info()`       | String module will be available soon!            |
+| 🎲Game     | `ldt.game.dice3()`        | [2,6,4]                                          |
+| 🔧Utils    | `ldt.utils.seed(21)`      | xayaW9LU0ncPdW1JJtuOn                            |
                                                     
 ## 🛤️ Roadmap - Plans ahead
   - JSDocs will be added

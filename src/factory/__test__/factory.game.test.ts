@@ -43,7 +43,7 @@ describe('it tests the game module', () => {
       expect(CARDS.NAMES.includes(name)).toBe(true);
       expect(CARDS.TYPES.includes(type)).toBe(true);
     } else {
-      fail('card was not returned');
+      expect(true).toBe(false);
     }
   });
 
@@ -54,7 +54,7 @@ describe('it tests the game module', () => {
       expect(CARDS.NAMES.includes(name)).toBe(true);
       expect(CARDS.SYMBOLS.includes(symbol)).toBe(true);
     } else {
-      fail('card was not returned');
+      expect(true).toBe(false);
     }
   });
 
@@ -113,7 +113,7 @@ describe('it tests the game module', () => {
         expect(CARDS.TYPES.includes(type)).toBe(true);
       });
     } else {
-      fail('cards were not returned');
+      expect(true).toBe(false);
     }
   });
 
@@ -127,7 +127,7 @@ describe('it tests the game module', () => {
         expect(CARDS.SYMBOLS.includes(type)).toBe(true);
       });
     } else {
-      fail('cards were not returned');
+      expect(true).toBe(false);
     }
   });
 

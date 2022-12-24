@@ -8,6 +8,7 @@ describe('it tests the number module', () => {
     factory = new PersonFactory();
   });
 
+
   it('returns true if factory is initialized', () => {
     expect(factory).toBeTruthy();
   });
@@ -44,6 +45,8 @@ describe('it tests the number module', () => {
     const gender = factory.gender();
     if (gender) {
       expect(["male", "female"].includes(gender)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -51,6 +54,8 @@ describe('it tests the number module', () => {
     const gender = factory.gender({binary: false});
     if (gender) {
       expect(genders.includes(gender)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -66,6 +71,8 @@ describe('it tests the number module', () => {
     const firstName = factory.firstName();
     if (firstName) {
       expect([...femaleFirstNames, ...maleFirstNames].includes(firstName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -73,6 +80,8 @@ describe('it tests the number module', () => {
     const firstName = factory.firstName({sex: "female"});
     if (firstName) {
       expect(femaleFirstNames.includes(firstName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -80,6 +89,8 @@ describe('it tests the number module', () => {
     const firstName = factory.firstName({sex: "male"});
     if (firstName) {
       expect(maleFirstNames.includes(firstName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -95,6 +106,8 @@ describe('it tests the number module', () => {
     const middleName = factory.middleName();
     if (middleName) {
       expect([...femaleMiddleNames, ...maleMiddleNames].includes(middleName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -102,6 +115,8 @@ describe('it tests the number module', () => {
     const middleName = factory.middleName({sex: "female"});
     if (middleName) {
       expect(femaleMiddleNames.includes(middleName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -109,6 +124,8 @@ describe('it tests the number module', () => {
     const middleName = factory.middleName({sex: "male"});
     if (middleName) {
       expect(maleMiddleNames.includes(middleName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -124,6 +141,8 @@ describe('it tests the number module', () => {
     const lastName = factory.lastName();
     if (lastName) {
       expect([...femaleLastNames, ...maleLastNames, ...commonLastNames].includes(lastName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -131,6 +150,8 @@ describe('it tests the number module', () => {
     const lastName = factory.lastName({sex: "female"});
     if (lastName) {
       expect([...femaleLastNames, ...commonLastNames].includes(lastName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -138,6 +159,8 @@ describe('it tests the number module', () => {
     const lastName = factory.lastName({sex: "male"});
     if (lastName) {
       expect([...maleLastNames, ...commonLastNames].includes(lastName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -156,6 +179,8 @@ describe('it tests the number module', () => {
       expect(fullName.split(" ")).toHaveLength(2);
       expect([...femaleFirstNames, ...maleFirstNames].includes(firstName)).toBe(true);
       expect([...femaleLastNames, ...maleLastNames, ...commonLastNames].includes(lastName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -166,6 +191,8 @@ describe('it tests the number module', () => {
       expect(fullName.split(" ")).toHaveLength(2);
       expect(femaleFirstNames.includes(firstName)).toBe(true);
       expect([...femaleLastNames, ...commonLastNames].includes(lastName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -176,6 +203,8 @@ describe('it tests the number module', () => {
       expect(fullName.split(" ")).toHaveLength(2);
       expect(maleFirstNames.includes(firstName)).toBe(true);
       expect([...maleLastNames, ...commonLastNames].includes(lastName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -187,6 +216,8 @@ describe('it tests the number module', () => {
       expect([...femaleFirstNames, ...maleFirstNames].includes(firstName)).toBe(true);
       expect([...femaleMiddleNames, ...maleMiddleNames].includes(middleName)).toBe(true);
       expect([...femaleLastNames, ...maleLastNames, ...commonLastNames].includes(lastName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -198,6 +229,8 @@ describe('it tests the number module', () => {
       expect(femaleFirstNames.includes(firstName)).toBe(true);
       expect(femaleMiddleNames.includes(middleName)).toBe(true);
       expect([...femaleLastNames, ...commonLastNames].includes(lastName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 
@@ -209,6 +242,8 @@ describe('it tests the number module', () => {
       expect(maleFirstNames.includes(firstName)).toBe(true);
       expect(maleMiddleNames.includes(middleName)).toBe(true);
       expect([...maleLastNames, ...commonLastNames].includes(lastName)).toBe(true);
+    } else {
+      expect(true).toBe(false);
     }
   });
 

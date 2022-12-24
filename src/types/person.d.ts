@@ -6,7 +6,7 @@ export type NameOptions = {
   sex?: SexType;
 }
 
-export type AgeOptions = Pick<IntOptions,'max'|'min'>;
+export type AgeOptions = IntOptions;
 
 export type FullNameOptions = {
   middle?: boolean;

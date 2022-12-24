@@ -1,6 +1,10 @@
-const getNumberBetween = (min:number, max:number) => {
+const getNumberBetween = (min:number, max:number, precision?:number) => {
   const [_min, _max] = min < max ? [min, max] : [max,min];
-  return Math.floor(Math.random() * (_max - _min + 1) + _min);
+  if (precision) {
+    return parseFloat((Math.random() * (_max - _min) + _min).toFixed(precision));    
+  } else {
+    return Math.floor(Math.random() * (_max - _min + 1) + _min);
+  }
 }
 
 const getRandomValue = (entities: any[]) => {
@@ -8,11 +12,11 @@ const getRandomValue = (entities: any[]) => {
   return entities[randomIndex];
 }
 
-const throwErrors = ((issues: any[]) => {
+const throwErrors = (issues: any[]) => {
   issues.forEach(issue => {
     throw new Error(issue.message);
   });
-})
+}
 
 export default {
   getNumberBetween,

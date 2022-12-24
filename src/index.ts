@@ -8,7 +8,9 @@ import PersonFactory from './factory/factory.person';
 import ProductFactory from './factory/factory.product';
 import StringFactory from './factory/factory.string';
 import UtilsFactory from './factory/factory.utils';
-import { IntOptions } from './types/number';
+
+import { HslOptions, RgbOptions } from './types/color';
+import { IntOptions, FloatOptions } from './types/number';
 import { AgeOptions, FullNameOptions, GenderOptions, NameOptions, SexType } from './types/person';
 import { CardOptions } from './types/game';
 import { SeedOptions } from './types/utils';
@@ -30,5 +32,5 @@ export default ldt;
 export { ldt };
 export type {
   AgeOptions, FullNameOptions, GenderOptions, IntOptions,  NameOptions, SexType, SeedOptions, 
-  CardOptions,
+  CardOptions, HslOptions, RgbOptions, FloatOptions,
 };

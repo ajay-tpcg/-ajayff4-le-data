@@ -3,6 +3,16 @@
 See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
+## v1.0.8
+### New
+  - Added 🌈 color module with rgb, hsl, and many more color spaces
+  - Added 🆔 id module with nanoid & uuid
+  - Updated 🔢 number module with float, oct & hex
+  - Playground updated with color, id, number module as well
+### Docs
+  - Badges & module examples has been updated in README
+  - Project description has been moved to the top of README
+
 ## v1.0.7
 ### New
   - Added 🎲 game module ♣️ for dice roll, toss & cards
