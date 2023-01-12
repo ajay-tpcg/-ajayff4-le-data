@@ -2,6 +2,7 @@ import crypto from 'crypto';
 import UtilsFactory from './factory.utils';
 
 class IdFactory {
+  // requires nodeJS of version 15.6.0 or above
   uuid() {
     return crypto.randomUUID();
   }

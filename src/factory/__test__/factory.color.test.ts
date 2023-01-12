@@ -43,10 +43,13 @@ describe('it tests the color module', () => {
   it('returns an RGB color in array format with alpha', () => {
     const color = factory.rgb({decimal:true, alpha:true}) as Array<number>;
     expect(color).toHaveLength(4);
-    color.forEach((component:number) => {
+    const [r,g,b,a] = color;
+    [r,g,b].forEach((component:number) => {
       expect(component).toBeGreaterThanOrEqual(0);
       expect(component).toBeLessThanOrEqual(255);
     });
+    expect(a).toBeGreaterThanOrEqual(0);
+    expect(a).toBeLessThanOrEqual(1);
   });
 
   it('throws error if parameter is of incorrect type for rgb() method', () => {
@@ -60,8 +63,8 @@ describe('it tests the color module', () => {
   it('returns an HSL color in array format', () => {
     const color = factory.hsl();
     if (color) {
-      const [h,s,l] = color;
       expect(color).toHaveLength(3);
+      const [h,s,l] = color;
       expect(h).toBeGreaterThanOrEqual(0);
       expect(h).toBeLessThanOrEqual(359);
       [s,l].forEach(component => {
@@ -76,14 +79,16 @@ describe('it tests the color module', () => {
   it('returns an HSL color in array format with alpha', () => {
     const color = factory.hsl({alpha:true});
     if (color) {
-      const [h,s,l,a] = color;
       expect(color).toHaveLength(4);
+      const [h,s,l,a] = color;
       expect(h).toBeGreaterThanOrEqual(0);
       expect(h).toBeLessThanOrEqual(359);
-      [s,l,a].forEach(component => {
+      [s,l].forEach(component => {
         expect(component).toBeGreaterThanOrEqual(0);
         expect(component).toBeLessThanOrEqual(100);
       });
+      expect(a).toBeGreaterThanOrEqual(0);
+      expect(a).toBeLessThanOrEqual(1);
     } else {
       expect(true).toBe(false);
     }
@@ -109,8 +114,8 @@ describe('it tests the color module', () => {
 
   it('returns an HWB color in array format', () => {
     const color = factory.hwb();
-    const [h,w,b] = color;
     expect(color).toHaveLength(3);
+    const [h,w,b] = color;
     expect(h).toBeGreaterThanOrEqual(0);
     expect(h).toBeLessThanOrEqual(359);
     [w,b].forEach(component => {
@@ -122,8 +127,8 @@ describe('it tests the color module', () => {
 
   it('returns an LAB color in array format', () => {
     const color = factory.lab();
-    const [l,a,b] = color;
     expect(color).toHaveLength(3);
+    const [l,a,b] = color;
     expect(l).toBeGreaterThanOrEqual(0);
     expect(l).toBeLessThanOrEqual(100);
     [a,b].forEach(component => {
@@ -136,6 +141,9 @@ describe('it tests the color module', () => {
   it('returns an LCH color in array format', () => {
     const color = factory.lch();
     expect(color).toHaveLength(3);
+    color.forEach(component => {
+      expect(component).toBeTruthy();
+    });
   });
 
 

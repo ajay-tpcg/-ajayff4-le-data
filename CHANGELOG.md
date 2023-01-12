@@ -3,6 +3,14 @@
 See commit history on Github for change history
 https://github.com/Ajayff4/-ajayff4-le-data
 
+## v1.0.9
+### Fix
+  - Fixed NaN of c value of lch() method
+  - Fixed alpha value of hsla() method
+  - Fixed alpha value of rgb() method
+### New
+  - Updated data set for names
+
 ## v1.0.8
 ### New
   - Added 🌈 color module with rgb, hsl, and many more color spaces

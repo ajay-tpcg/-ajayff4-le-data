@@ -28,7 +28,7 @@ class ColorFactory {
         const r = utils.getNumberBetween(0,255);
         const g = utils.getNumberBetween(0,255);
         const b = utils.getNumberBetween(0,255);
-        const a = utils.getNumberBetween(0,255);
+        const a = utils.getNumberBetween(0,1,2);
         return _options.alpha ? [r,g,b,a] : [r,g,b];
       } else {
         let str = '#';
@@ -60,7 +60,7 @@ class ColorFactory {
       const h = utils.getNumberBetween(0,359);
       const s = utils.getNumberBetween(0,100,2);
       const l = utils.getNumberBetween(0,100,2);
-      const a = utils.getNumberBetween(0,100,2);
+      const a = utils.getNumberBetween(0,1,2);
       return _options.alpha ? [h,s,l,a] : [h,s,l];
     } else {
       utils.throwErrors(res.error.issues);
@@ -97,7 +97,7 @@ class ColorFactory {
   // Lightness, Chroma(Saturation), Hue
   lch() {
     const [L,a,b] = this.lab();
-    const C = parseFloat(Math.sqrt(a^2 + b^2).toFixed(2));
+    const C = parseFloat(Math.sqrt(Math.pow(a,2) + Math.pow(b,2)).toFixed(2));
     const H = parseFloat((Math.atan2(b, a) * 180 / Math.PI).toFixed(2));
     return [L,C,H];
   }
